@@ -32,13 +32,13 @@
             LblName = new Label();
             TxtName = new TextBox();
             LblAge = new Label();
-            TxtAge = new TextBox();
             LblGender = new Label();
             RdoMale = new RadioButton();
             RdoFemale = new RadioButton();
             BtnMsg = new Button();
             LblResult = new Label();
             TxtResult = new TextBox();
+            TxtAge = new MaskedTextBox();
             SuspendLayout();
             // 
             // LblName
@@ -48,9 +48,9 @@
             LblName.ForeColor = SystemColors.Control;
             LblName.Location = new Point(14, 15);
             LblName.Name = "LblName";
-            LblName.Size = new Size(83, 21);
+            LblName.Size = new Size(79, 21);
             LblName.TabIndex = 0;
-            LblName.Text = "이름 입력 :";
+            LblName.Text = "이름입력 :";
             LblName.Click += LblName_Click;
             // 
             // TxtName
@@ -58,7 +58,8 @@
             TxtName.Location = new Point(99, 13);
             TxtName.Multiline = true;
             TxtName.Name = "TxtName";
-            TxtName.Size = new Size(153, 23);
+            TxtName.PlaceholderText = "공백없이 입력하세요";
+            TxtName.Size = new Size(160, 23);
             TxtName.TabIndex = 1;
             TxtName.TextChanged += TxtName_TextChanged;
             // 
@@ -69,17 +70,9 @@
             LblAge.ForeColor = SystemColors.Control;
             LblAge.Location = new Point(14, 51);
             LblAge.Name = "LblAge";
-            LblAge.Size = new Size(83, 21);
+            LblAge.Size = new Size(79, 21);
             LblAge.TabIndex = 0;
-            LblAge.Text = "나이 입력 :";
-            // 
-            // TxtAge
-            // 
-            TxtAge.Location = new Point(99, 49);
-            TxtAge.Multiline = true;
-            TxtAge.Name = "TxtAge";
-            TxtAge.Size = new Size(153, 23);
-            TxtAge.TabIndex = 2;
+            LblAge.Text = "생년월일 :";
             // 
             // LblGender
             // 
@@ -88,9 +81,9 @@
             LblGender.ForeColor = SystemColors.Control;
             LblGender.Location = new Point(14, 86);
             LblGender.Name = "LblGender";
-            LblGender.Size = new Size(83, 21);
+            LblGender.Size = new Size(79, 21);
             LblGender.TabIndex = 0;
-            LblGender.Text = "성별 입력 :";
+            LblGender.Text = "성별입력 :";
             // 
             // RdoMale
             // 
@@ -136,9 +129,10 @@
             LblResult.ForeColor = SystemColors.Control;
             LblResult.Location = new Point(16, 127);
             LblResult.Name = "LblResult";
-            LblResult.Size = new Size(81, 21);
+            LblResult.Size = new Size(77, 21);
             LblResult.TabIndex = 0;
-            LblResult.Text = "결        과 :";
+            LblResult.Text = "결       과 :";
+            LblResult.Click += LblResult_Click;
             // 
             // TxtResult
             // 
@@ -148,17 +142,26 @@
             TxtResult.Size = new Size(396, 138);
             TxtResult.TabIndex = 5;
             // 
+            // TxtAge
+            // 
+            TxtAge.Location = new Point(99, 49);
+            TxtAge.Mask = "0000-00-00";
+            TxtAge.Name = "TxtAge";
+            TxtAge.Size = new Size(160, 23);
+            TxtAge.TabIndex = 2;
+            TxtAge.ValidatingType = typeof(DateTime);
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.HotTrack;
             ClientSize = new Size(584, 311);
+            Controls.Add(TxtAge);
             Controls.Add(BtnMsg);
             Controls.Add(RdoFemale);
             Controls.Add(RdoMale);
             Controls.Add(TxtResult);
-            Controls.Add(TxtAge);
             Controls.Add(TxtName);
             Controls.Add(LblResult);
             Controls.Add(LblGender);
@@ -177,12 +180,12 @@
         private Label LblName;
         private TextBox TxtName;
         private Label LblAge;
-        private TextBox TxtAge;
         private Label LblGender;
         private RadioButton RdoMale;
         private RadioButton RdoFemale;
         private Button BtnMsg;
         private Label LblResult;
         private TextBox TxtResult;
+        private MaskedTextBox TxtAge;
     }
 }
