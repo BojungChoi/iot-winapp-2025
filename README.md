@@ -361,7 +361,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
         - internal protected : 동일한 네임스페이스에서 protected 기능
         - internal은 최근에 자동생성에서 자주 사용되고 있음
 
-        <img src='/image/cs0006.png' width = '600'>
+        <img src='/image/cs0005.png' width = '600'>
 
     4. 상속, 다형성, 추상클래스, 인터페이스 - [소스](./day03/Day03Study/SyntaxWinApp01/Person.cs)
         - Java는 한 파일에 한 클래스 선호
@@ -392,7 +392,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
             - 얕은 복사 : 내부를 같이 참조하는 형태 (복사는했는데 두개가 같은걸 보고있음)
             - 깊은 복사 : 완전히 새로 객체 생성
 
-        <img src='/image/cs0005.png' width = '600'>
+        <img src='/image/cs0006.png' width = '600'>
 
 
         - ref, out 키워드 > 차후에 ...
