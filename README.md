@@ -470,6 +470,10 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
 
 
+        https://github.com/user-attachments/assets/517655dd-2b31-43cd-acc1-85c8293431e1
+
+
+
 
     3. 컬렉션 - [소스](./day04/Day04Study/SyntaxWinApp02/FrmMain.cs)
         - 배열, 리스트, 딕셔너리, 큐, 스택 등 여러데이터를 저장하고 다루는 구조를 가진 객체를 통칭
