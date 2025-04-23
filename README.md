@@ -468,6 +468,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
 
 
+        <img src="./image/cs0008.gif" width="600">
 
         
 
