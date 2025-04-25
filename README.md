@@ -725,7 +725,6 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 ### WinForms 응용
 - 윈앱 응용개발
     - UI 컨트롤 예제 - [소스](./day06/Day06Study/WinControlsApp/FrmMain.cs)
-    <img src =".//image/cs0014.png" width = "800">
 
 
 ## 7일차
