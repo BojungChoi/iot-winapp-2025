@@ -490,6 +490,21 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
         <img src="./image/cs0010.png" width="600">
 
+## 5일차
+
+### 윈앱 컨트롤 4
+- `StatusStrip` : 상태표시줄 컨트롤. 서브 컨트롤 추가 가능
+    - 이름은 거의 변경 안함. 서브 컨트롤 이름을 변경
+    - `StatusLabel` : 글자만 표시, Lbl~ 로 사용
+    - `ProgressBar` : 진행바 표시, Prg~ 이름 시작
+    - `DropDownButton` : 드롭다운버튼, 이벤트 추가
+    - `SplitButton` : 버튼, 이벤트 추가
+    - SizingGrip : 오른쪽 하단의 사이즈조절 아이콘 표시
+
+### VS 사용팁
+- 소스코드 들여쓰기 문제가 발생하면 > 편집 > 고급 > 문서서식 클릭
+
+
 ### C# 문법
 - 기본 문법
     1. 델리게이트(대리자), 이벤트 - [소스](./day05/Day05Study/SyntaxWinApp01/FmMain.cs)
@@ -634,36 +649,6 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
 ## 6일차
 
-- C# 기본
-  - enum : 열거형, 필요한 목록의 수로된 키값을 문자로 변경해서 사용하는 구조체
-  - 이진 &(and), |(or) 연산으로 처리할때 효과적
-
-    ```cs
-    public enum FontStyle
-    {
-        Regular = 0,   // 일반 글씨. 0000
-        Bold = 1,      // 굵은체, 0001
-        Italic = 2,    // 이탤릭, 0010
-        Underline = 4, // 밑줄, 0100
-        Strikeout = 8, // 취소선, 1000
-    }
-    ```
-
-    - 모달창, 모달리스창 : 창위에 다른 창을 띄울때 접근권한 제어 형태
-        - Modal : 부모창과 연관된 작업을 할때 사용. 모달창이 닫히지 않으면 부모창을 제어할 수 없음
-        - Modaless : 부모창과 상관없이 동작. 메인창을 언제나 닫을 수 있고, 메인창은 받으면 모두 종료. `사용시 주의`
-
-### C# 마지막
-- C# 고급
-    - 1. 비동기, 스레드 - [소스](./day06/Day06Study/SyntaxWinApp01/FrmMain.cs)
-        - BackgroundWorker 클래스 사용
-        - .NET에 특화된 스레드사용 클래스
-        - 전통적인 스레드를 쉽게 쓸 수 있게 변형
-        - this.Invoke, async, await, Task 등 사용할 필요없음
-        - 취소 기능을 추가할 수 없음
-        - 복잡한 비동기 작업이 많으면 Task 기반을 사용 권장
-
-
 
 ### 윈앱 컨트롤 5
 - `BackgroundWorker` : 화면 뒷단에서 작업할 일중에서 스레드 처리가 되어야할 부분을 손쉽게 동작시켜주는 컨트롤(화면표시X)
@@ -672,6 +657,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
     - `DoWork` : 백그라운드(스레드처리) 작업
     - `ProgresssChanged` : UI상 변화를 처리해주는 작업
     - `RunWokerCompleted` : 작업 완료시 처리
+
 - `CheckBox` : 여러개에서 다수를 선택할 수 있는 컨트롤(라디오버튼과 동작이 반대)
     - Chk~ 로 이름 시작
     - Checked : 선택 여부
@@ -679,7 +665,6 @@ IoT 개발자 C#/WinApp 리포지토리 2025
         - Unchecked : 체크를 안한 상태
         - Checked : 체크한 상태
         - Intermediate : 모호한 상태(하위 체크가 일부는 선택되고, 일부는 체크안됐을 때)
-
 - `TrackBar` : 사운드, 화면밝기등 최소, 최대를 스크롤로 조정하는 컨트롤
     - Trb~ 로 이름 사용
     - Minimum, Maximum : ProgressBar와 동일
@@ -716,11 +701,39 @@ IoT 개발자 C#/WinApp 리포지토리 2025
     - 빈공간 (-) 사용시 한줄 그어줌
     - Click : 해당 메뉴 클릭 이벤트
 
-
 - `ToolTip` : 각 컨트롤에 툴팁아이콘 표시 컨트롤
     - 툴팁컨트롤 하나로 모든 컨트롤 툴팁 관리 가능
     - Form_Load에서 작성.
 
+### C# 문법
+  - enum : 열거형, 필요한 목록의 수로된 키값을 문자로 변경해서 사용하는 구조체
+  - 이진 &(and), |(or) 연산으로 처리할때 효과적
+
+    ```cs
+    public enum FontStyle
+    {
+        Regular = 0,   // 일반 글씨. 0000
+        Bold = 1,      // 굵은체, 0001
+        Italic = 2,    // 이탤릭, 0010
+        Underline = 4, // 밑줄, 0100
+        Strikeout = 8, // 취소선, 1000
+    }
+    ```
+
+    - 모달창, 모달리스창 : 창위에 다른 창을 띄울때 접근권한 제어 형태
+        - Modal : 부모창과 연관된 작업을 할때 사용. 모달창이 닫히지 않으면 부모창을 제어할 수 없음
+        - Modaless : 부모창과 상관없이 동작. 메인창을 언제나 닫을 수 있고, 메인창은 받으면 모두 종료. 사용시 주의
+        - 메시지박스 : 기본적으로 모달창으로 동작
+
+### C# 마지막
+- C# 고급
+    - 1. 비동기, 스레드 - [소스](./day06/Day06Study/SyntaxWinApp01/FrmMain.cs)
+        - BackgroundWorker 클래스 사용
+        - .NET에 특화된 스레드사용 클래스
+        - 전통적인 스레드를 쉽게 쓸 수 있게 변형
+        - this.Invoke, async, await, Task 등 사용할 필요없음
+        - 취소 기능을 추가할 수 없음
+        - 복잡한 비동기 작업이 많으면 Task 기반을 사용 권장
 
 ### WinForms 응용
 - 윈앱 응용개발
@@ -729,12 +742,20 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
     https://github.com/user-attachments/assets/bb2f3607-dac6-440b-99dc-55215555d303
 
-
-
-## 7일차
+## 7일차(04.28)
 
 ### C# 응용 - WPF
--
+- WPF 기본 
+
+## 8일차
+
+### C# 응용 - WPF
+- WPF 기본 
+
+## 9일차
+
+### C# 응용 - WPF
+- WPF 기본 
 
 ## 10일차
 
