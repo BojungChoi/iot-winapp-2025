@@ -37,11 +37,12 @@
             MnuNewFile = new ToolStripMenuItem();
             종료XToolStripMenuItem = new ToolStripSeparator();
             MnuExit = new ToolStripMenuItem();
+            파일FToolStripMenuItem = new ToolStripMenuItem();
             groupBox1 = new GroupBox();
             TxtResult = new TextBox();
             ChkItalic = new CheckBox();
             ChkBold = new CheckBox();
-            CboFonts = new ComboBox();
+            CboFont = new ComboBox();
             label1 = new Label();
             groupBox2 = new GroupBox();
             PicImage = new PictureBox();
@@ -109,7 +110,7 @@
             // 
             // MnuFile
             // 
-            MnuFile.DropDownItems.AddRange(new ToolStripItem[] { MnuNewFile, 종료XToolStripMenuItem, MnuExit });
+            MnuFile.DropDownItems.AddRange(new ToolStripItem[] { MnuNewFile, 종료XToolStripMenuItem, MnuExit, 파일FToolStripMenuItem });
             MnuFile.Name = "MnuFile";
             MnuFile.Size = new Size(57, 20);
             MnuFile.Text = "파일(&F)";
@@ -132,12 +133,18 @@
             MnuExit.Text = "종료(&X)";
             MnuExit.Click += MnuExit_Click;
             // 
+            // 파일FToolStripMenuItem
+            // 
+            파일FToolStripMenuItem.Name = "파일FToolStripMenuItem";
+            파일FToolStripMenuItem.Size = new Size(119, 22);
+            파일FToolStripMenuItem.Text = "파일(&F)";
+            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(TxtResult);
             groupBox1.Controls.Add(ChkItalic);
             groupBox1.Controls.Add(ChkBold);
-            groupBox1.Controls.Add(CboFonts);
+            groupBox1.Controls.Add(CboFont);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 27);
             groupBox1.Name = "groupBox1";
@@ -179,14 +186,14 @@
             ChkBold.UseVisualStyleBackColor = true;
             ChkBold.CheckedChanged += ChkBold_CheckedChanged;
             // 
-            // CboFonts
+            // CboFont
             // 
-            CboFonts.FormattingEnabled = true;
-            CboFonts.Location = new Point(41, 20);
-            CboFonts.Name = "CboFonts";
-            CboFonts.Size = new Size(195, 22);
-            CboFonts.TabIndex = 1;
-            CboFonts.SelectedIndexChanged += CboFonts_SelectedIndexChanged;
+            CboFont.FormattingEnabled = true;
+            CboFont.Location = new Point(41, 20);
+            CboFont.Name = "CboFont";
+            CboFont.Size = new Size(195, 22);
+            CboFont.TabIndex = 1;
+            CboFont.SelectedIndexChanged += CboFonts_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -504,7 +511,7 @@
         private GroupBox groupBox3;
         private TextBox TxtResult;
         private CheckBox ChkBold;
-        private ComboBox CboFonts;
+        private ComboBox CboFont;
         private Label label1;
         private CheckBox ChkItalic;
         private ToolStripStatusLabel LblState;
@@ -537,5 +544,6 @@
         private ToolStripSeparator 종료XToolStripMenuItem;
         private ToolStripMenuItem MnuExit;
         private ToolTip toolTip1;
+        private ToolStripMenuItem 파일FToolStripMenuItem;
     }
 }

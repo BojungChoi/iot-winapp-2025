@@ -13,7 +13,7 @@
             //CboFonts.Items.AddRange(Fonts);
             foreach (var Font in Fonts)
             {
-                CboFonts.Items.Add(Font.Name);
+                CboFont.Items.Add(Font.Name);
             }
 
             LblState.Text = "상태 : 폰트읽기 완료";
@@ -25,7 +25,7 @@
 
         private void ChangeFont()
         {
-            if (CboFonts.SelectedIndex < 0) return; // 폰트를 선택안한 경우
+            if (CboFont.SelectedIndex < 0) return; // 폰트를 선택안한 경우
 
             FontStyle style = FontStyle.Regular; // 0 대신에 Regular
 
@@ -34,7 +34,7 @@
             if (ChkItalic.Checked) style |= FontStyle.Italic; // 0001 | 0010 => 0011
 
             // CboFonts에서 선택된 글자로, 글자크기12, 글자체 스타일 적용
-            TxtResult.Font = new Font((string)CboFonts.SelectedItem, 12, style);
+            TxtResult.Font = new Font((string)CboFont.SelectedItem, 12, style);
         }
 
         private void CboFonts_SelectedIndexChanged(object sender, EventArgs e)
