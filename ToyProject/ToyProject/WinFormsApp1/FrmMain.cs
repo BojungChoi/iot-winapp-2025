@@ -43,7 +43,7 @@ namespace WinFormsApp1
             TxtOs.Text = "";
             TxtBoard.Text = "";
 
-            // 🌟 추가 : PbxLoading 설정
+            // 추가 : PbxLoading 설정
             try
             {
                 PbxLoading.Image = Image.FromFile("C:\\Source\\iot-winapp-2025\\image\\Loading.gif"); // 너가 넣은 피젯스피너 GIF 파일명
@@ -194,7 +194,7 @@ namespace WinFormsApp1
         {
             return code switch
             {
-                20 => "DDR",   // DDR
+                20 => "DDR",   
                 21 => "DDR2",
                 24 => "DDR3",
                 26 => "DDR4",
@@ -611,7 +611,7 @@ namespace WinFormsApp1
         {
             if (BtnClear.Tag is Color originalColor)
             {
-                BtnRefresh.BackColor = Color.White;
+                BtnClear.BackColor = Color.White;
             }
         }
     }
