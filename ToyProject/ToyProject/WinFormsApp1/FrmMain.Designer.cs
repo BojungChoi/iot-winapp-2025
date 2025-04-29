@@ -60,21 +60,26 @@
             TimerRefresh = new System.Windows.Forms.Timer(components);
             PbxLoading = new PictureBox();
             pictureBox1 = new PictureBox();
+            LnkCpu = new LinkLabel();
+            LnkGpu = new LinkLabel();
+            LnkBoard = new LinkLabel();
+            PbxInfoMessage = new PictureBox();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PbxLoading).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbxInfoMessage).BeginInit();
             SuspendLayout();
             // 
             // LblCpu
             // 
             LblCpu.AutoSize = true;
             LblCpu.BackColor = Color.Transparent;
-            LblCpu.Font = new Font("한컴 고딕", 11.25F);
+            LblCpu.Font = new Font("Microsoft Sans Serif", 11.25F);
             LblCpu.ForeColor = Color.Black;
             LblCpu.Location = new Point(12, 71);
             LblCpu.Name = "LblCpu";
-            LblCpu.Size = new Size(46, 19);
+            LblCpu.Size = new Size(48, 18);
             LblCpu.TabIndex = 1;
             LblCpu.Text = "CPU :";
             // 
@@ -90,11 +95,11 @@
             // 
             LblRam.AutoSize = true;
             LblRam.BackColor = Color.Transparent;
-            LblRam.Font = new Font("한컴 고딕", 11.25F);
+            LblRam.Font = new Font("Microsoft Sans Serif", 11.25F);
             LblRam.ForeColor = Color.Black;
             LblRam.Location = new Point(9, 110);
             LblRam.Name = "LblRam";
-            LblRam.Size = new Size(49, 19);
+            LblRam.Size = new Size(49, 18);
             LblRam.TabIndex = 1;
             LblRam.Text = "RAM :";
             // 
@@ -108,8 +113,8 @@
             // 
             // BtnRefresh
             // 
-            BtnRefresh.Font = new Font("한컴 고딕", 8.999999F, FontStyle.Bold);
-            BtnRefresh.Location = new Point(522, 276);
+            BtnRefresh.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold);
+            BtnRefresh.Location = new Point(522, 315);
             BtnRefresh.Name = "BtnRefresh";
             BtnRefresh.Size = new Size(100, 30);
             BtnRefresh.TabIndex = 3;
@@ -123,11 +128,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("한컴 고딕", 11.25F);
+            label1.Font = new Font("Microsoft Sans Serif", 11.25F);
             label1.ForeColor = Color.Black;
             label1.Location = new Point(10, 150);
             label1.Name = "label1";
-            label1.Size = new Size(48, 19);
+            label1.Size = new Size(46, 18);
             label1.TabIndex = 1;
             label1.Text = "VGA :";
             // 
@@ -143,11 +148,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("한컴 고딕", 11.25F);
+            label2.Font = new Font("Microsoft Sans Serif", 11.25F);
             label2.ForeColor = Color.Black;
             label2.Location = new Point(8, 189);
             label2.Name = "label2";
-            label2.Size = new Size(50, 19);
+            label2.Size = new Size(50, 18);
             label2.TabIndex = 1;
             label2.Text = "DISK :";
             // 
@@ -163,11 +168,11 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("한컴 고딕", 11.25F);
+            label3.Font = new Font("Microsoft Sans Serif", 11.25F);
             label3.ForeColor = Color.Black;
             label3.Location = new Point(21, 229);
             label3.Name = "label3";
-            label3.Size = new Size(37, 19);
+            label3.Size = new Size(38, 18);
             label3.TabIndex = 1;
             label3.Text = "OS :";
             // 
@@ -183,11 +188,11 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("한컴 고딕", 11.25F);
+            label4.Font = new Font("Microsoft Sans Serif", 11.25F);
             label4.ForeColor = Color.Black;
             label4.Location = new Point(12, 266);
             label4.Name = "label4";
-            label4.Size = new Size(46, 19);
+            label4.Size = new Size(43, 18);
             label4.TabIndex = 1;
             label4.Text = "M/B :";
             // 
@@ -204,7 +209,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { MnuFile });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(634, 24);
+            menuStrip1.Size = new Size(638, 24);
             menuStrip1.TabIndex = 4;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -239,9 +244,9 @@
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { LblState });
-            statusStrip1.Location = new Point(0, 309);
+            statusStrip1.Location = new Point(0, 365);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(634, 22);
+            statusStrip1.Size = new Size(638, 22);
             statusStrip1.SizingGrip = false;
             statusStrip1.TabIndex = 5;
             statusStrip1.Text = "statusStrip1";
@@ -255,19 +260,19 @@
             // 
             // PrgProcess
             // 
-            PrgProcess.Location = new Point(32, 293);
+            PrgProcess.Location = new Point(30, 303);
             PrgProcess.Name = "PrgProcess";
-            PrgProcess.Size = new Size(474, 13);
+            PrgProcess.Size = new Size(474, 17);
             PrgProcess.TabIndex = 6;
             // 
             // ChkBold
             // 
             ChkBold.AutoSize = true;
             ChkBold.BackColor = Color.Transparent;
-            ChkBold.Font = new Font("한컴 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            ChkBold.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
             ChkBold.Location = new Point(316, 39);
             ChkBold.Name = "ChkBold";
-            ChkBold.Size = new Size(54, 21);
+            ChkBold.Size = new Size(58, 20);
             ChkBold.TabIndex = 7;
             ChkBold.Text = "Bold";
             ChkBold.UseVisualStyleBackColor = false;
@@ -297,8 +302,8 @@
             // 
             // BtnClear
             // 
-            BtnClear.Font = new Font("한컴 고딕", 8.999999F, FontStyle.Bold);
-            BtnClear.Location = new Point(522, 247);
+            BtnClear.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold);
+            BtnClear.Location = new Point(522, 282);
             BtnClear.Name = "BtnClear";
             BtnClear.Size = new Size(100, 30);
             BtnClear.TabIndex = 3;
@@ -312,11 +317,11 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("한컴 고딕", 12F, FontStyle.Bold);
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             label5.ForeColor = Color.Black;
             label5.Location = new Point(58, 39);
             label5.Name = "label5";
-            label5.Size = new Size(89, 21);
+            label5.Size = new Size(74, 20);
             label5.TabIndex = 9;
             label5.Text = "글씨체 변경";
             // 
@@ -324,7 +329,7 @@
             // 
             PbxLoading.BackgroundImageLayout = ImageLayout.None;
             PbxLoading.Image = (Image)resources.GetObject("PbxLoading.Image");
-            PbxLoading.Location = new Point(549, 204);
+            PbxLoading.Location = new Point(550, 239);
             PbxLoading.Name = "PbxLoading";
             PbxLoading.Size = new Size(43, 39);
             PbxLoading.TabIndex = 10;
@@ -333,12 +338,54 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(500, 87);
+            pictureBox1.Location = new Point(481, 107);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(122, 130);
+            pictureBox1.Size = new Size(141, 142);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
+            // 
+            // LnkCpu
+            // 
+            LnkCpu.AutoSize = true;
+            LnkCpu.Location = new Point(12, 330);
+            LnkCpu.Name = "LnkCpu";
+            LnkCpu.Size = new Size(150, 15);
+            LnkCpu.TabIndex = 12;
+            LnkCpu.TabStop = true;
+            LnkCpu.Text = "내 CPU 드라이버 다운로드";
+            LnkCpu.LinkClicked += LnkCpu_LinkClicked;
+            // 
+            // LnkGpu
+            // 
+            LnkGpu.AutoSize = true;
+            LnkGpu.Location = new Point(182, 330);
+            LnkGpu.Name = "LnkGpu";
+            LnkGpu.Size = new Size(151, 15);
+            LnkGpu.TabIndex = 12;
+            LnkGpu.TabStop = true;
+            LnkGpu.Text = "내 VGA 드라이버 다운로드";
+            LnkGpu.LinkClicked += LnkGpu_LinkClicked;
+            // 
+            // LnkBoard
+            // 
+            LnkBoard.AutoSize = true;
+            LnkBoard.Location = new Point(354, 330);
+            LnkBoard.Name = "LnkBoard";
+            LnkBoard.Size = new Size(150, 15);
+            LnkBoard.TabIndex = 12;
+            LnkBoard.TabStop = true;
+            LnkBoard.Text = "내 M/B 드라이버 다운로드";
+            LnkBoard.LinkClicked += LnkBoard_LinkClicked;
+            // 
+            // PbxInfoMessage
+            // 
+            PbxInfoMessage.BackgroundImageLayout = ImageLayout.Stretch;
+            PbxInfoMessage.Location = new Point(482, 27);
+            PbxInfoMessage.Name = "PbxInfoMessage";
+            PbxInfoMessage.Size = new Size(156, 92);
+            PbxInfoMessage.TabIndex = 13;
+            PbxInfoMessage.TabStop = false;
             // 
             // FrmMain
             // 
@@ -346,8 +393,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(634, 331);
+            ClientSize = new Size(638, 387);
+            Controls.Add(PbxInfoMessage);
             Controls.Add(PbxLoading);
+            Controls.Add(TxtBoard);
+            Controls.Add(TxtOs);
+            Controls.Add(TxtDisk);
+            Controls.Add(TxtGpu);
+            Controls.Add(TxtRam);
+            Controls.Add(TxtCpu);
+            Controls.Add(LnkBoard);
+            Controls.Add(LnkGpu);
+            Controls.Add(LnkCpu);
             Controls.Add(pictureBox1);
             Controls.Add(label5);
             Controls.Add(CboFonts);
@@ -357,17 +414,11 @@
             Controls.Add(statusStrip1);
             Controls.Add(BtnClear);
             Controls.Add(BtnRefresh);
-            Controls.Add(TxtBoard);
-            Controls.Add(TxtOs);
-            Controls.Add(TxtDisk);
-            Controls.Add(TxtGpu);
-            Controls.Add(TxtRam);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(LblRam);
-            Controls.Add(TxtCpu);
             Controls.Add(LblCpu);
             Controls.Add(menuStrip1);
             DoubleBuffered = true;
@@ -386,6 +437,7 @@
             statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PbxLoading).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbxInfoMessage).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -422,5 +474,9 @@
         private System.Windows.Forms.Timer TimerRefresh;
         private PictureBox PbxLoading;
         private PictureBox pictureBox1;
+        private LinkLabel LnkCpu;
+        private LinkLabel LnkGpu;
+        private LinkLabel LnkBoard;
+        private PictureBox PbxInfoMessage;
     }
 }
