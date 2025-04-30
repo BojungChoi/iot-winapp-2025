@@ -5,6 +5,10 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
 
 
+https://github.com/user-attachments/assets/0396baf2-62b4-4ae6-b011-ab2c0e873a43
+
+
+
 ### 기능구현 목록 ![소스](./ToyProject/ToyProject/WinFormsApp1/FrmMain.cs) 
 1. 말풍선 이미지 상태 처리
     - enum + 배열을 활용하여 Normal, Loading, Completed, Error 상태에 따라 말풍선 이미지 자동 변경.
