@@ -1,6 +1,31 @@
 # iot-winapp-2025
 IoT 개발자 C#/WinApp 리포지토리 2025
 
+## ToyProject(C# WinForm 을 활용한 3DP Chip 컨셉 내 컴퓨터 하드웨어 불러오기)
+
+
+
+### 기능구현 목록 ![소스](./ToyProject/ToyProject/WinFormsApp1/FrmMain.cs) 
+1. 말풍선 이미지 상태 처리
+    - enum + 배열을 활용하여 Normal, Loading, Completed, Error 상태에 따라 말풍선 이미지 자동 변경.
+2. 하드웨어 드라이버 링크 자동 검색
+    - 불러온 CPU/GPU/메인보드 정보를 바탕으로 구글 검색 링크 생성.
+    - 불러오지 않고 클릭 시 말풍선에 오류 이미지 출력 및 예외 메시지 표시.
+3. 비동기 정보 수집 처리 (async/await)
+    - Task.Run, Delay 등을 사용하여 시스템 정보 수집 과정을 느리게 보여주는 효과 구현.
+4. 파일 입출력 (Open/Save 기능)
+    - MenuStrip으로 시스템 정보를 텍스트 파일로 불러오기/저장 가능.
+5. 마우스 오버 시 버튼 컬러 변경
+    - MouseEnter, MouseLeave 이벤트로 버튼 강조 효과 적용.
+6. 글꼴 설정 기능
+    - 글꼴 콤보박스 및 Bold, Italic 체크박스로 텍스트 폰트 커스터마이징 가능.
+7. 상태바 구현
+    - 정보 수집 진행 상태를 Status Label과 ProgressBar로 표시.
+8. GIF 로딩 애니메이션 구현
+    - 로딩 중에는 PictureBox에 GIF 애니메이션이 돌아가도록 설정.
+9. Tooltip 사용한 상세 정보 제공
+    - CPU, RAM, GPU 등 하드웨어 상세 정보는 ToolTip으로 마우스 오버 시 표시.
+
 ## 1일차
 
 ### C# 시작전에
