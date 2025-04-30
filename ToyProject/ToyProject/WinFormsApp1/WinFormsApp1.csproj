@@ -9,6 +9,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="MessageBoxImage\CompleteMessage.png" />
+    <None Remove="MessageBoxImage\LinkErrorMessage.png" />
+    <None Remove="MessageBoxImage\LoadingMessage.png" />
+    <None Remove="MessageBoxImage\MainMessage.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="MessageBoxImage\CompleteMessage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MessageBoxImage\LinkErrorMessage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MessageBoxImage\LoadingMessage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MessageBoxImage\MainMessage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Management" Version="9.0.4" />
   </ItemGroup>
 

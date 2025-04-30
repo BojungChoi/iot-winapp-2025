@@ -71,12 +71,11 @@ public partial class FrmMain : Form
     }
     private void LoadBalloonImages()
     {
-        string basePath = Path.Combine(Application.StartupPath, "..", "..", "..", "MessageBoxImage");
 
-        balloonImages[(int)BalloonState.Normal] = Image.FromFile(Path.Combine(basePath, "MainMessage.png"));
-        balloonImages[(int)BalloonState.Loading] = Image.FromFile(Path.Combine(basePath, "LoadingMessage.png"));
-        balloonImages[(int)BalloonState.Completed] = Image.FromFile(Path.Combine(basePath, "CompleteMessage.png"));
-        balloonImages[(int)BalloonState.Error] = Image.FromFile(Path.Combine(basePath, "LinkErrorMessage.png"));
+        balloonImages[(int)BalloonState.Normal] = Image.FromFile("./MessageBoxImage/MainMessage.png");
+        balloonImages[(int)BalloonState.Loading] = Image.FromFile("./MessageBoxImage/LoadingMessage.png");
+        balloonImages[(int)BalloonState.Completed] = Image.FromFile("./MessageBoxImage/CompleteMessage.png");
+        balloonImages[(int)BalloonState.Error] = Image.FromFile("./MessageBoxImage/LinkErrorMessage.png");
     }
     private void SetBalloonState(BalloonState state)
     {

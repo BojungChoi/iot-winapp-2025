@@ -820,7 +820,9 @@ https://github.com/user-attachments/assets/0396baf2-62b4-4ae6-b011-ab2c0e873a43
     - 참조 - https://github.com/Carlos487/awesome-wpf
     - 상용 컴포넌트 제외
     - **(Free)MahApps.Metro** - https://mahapps.com/
-    - **(Free)WPF UI** - https://github.com/lepoco/wpfui
+        - GitHub - https://github.com/MahApps/MahApps.Metro
+    - **(Free)WPF UI** - https://wpfui.lepo.co/ 
+        - GitHub - https://github.com/lepoco/wpfui
     - Material Design In XAML ToolKit - http://materialdesigninxaml.net/
 
 
@@ -972,6 +974,7 @@ https://github.com/user-attachments/assets/0396baf2-62b4-4ae6-b011-ab2c0e873a43
 ### MahApps.Metro 프레임워크
 - 공식사이트 - https://mahapps.com/
     - 최소한 노력으로 Metro UI/Modern UI를 적용시킬 수 있는 프레임워크
+    - 2011년 개발시작, 2014년 1.0배포. 현재 버전 2.4.10
     - Metro UI, Modern UI - MS에서 시작한 디자인 스타일 
     - 깔끔하고 입체감을 최소화 시킴
 
@@ -1019,9 +1022,82 @@ https://github.com/user-attachments/assets/0396baf2-62b4-4ae6-b011-ab2c0e873a43
 
 ## 9일차
 
-### C# 응용 - WPF
-- WPF 기본 
+### MahApps.Metro 프레임워크
+- 컨트롤 사용법
+    - ProgressBar, MetroProgressBar, ProgressRing
+    - TabControl
 
+### WPF UI 프레임워크
+- 개요
+    - Fluent UI란 이름의 
+- 기본사용법 - [소스](./day09/Day09Study/WpfStudyApp07/MainWindow.xaml)
+    - NuGet 패키지 관리자 > WPF-UI 검색 후 설치
+    - VS 에 Extension for WPF UI
+        - 상단 메뉴 확장 > 확장관리
+        - WPF-UI 검색 후 설치 
+        - VSIS Instaaler 시작 > Modify
+    - VS Project > WPF UI 프로젝트 선택
+    - "MainWindow.xaml 을 추가 생성
+    - App.xaml.cs 오픈 - [소스](./day09/Day09Study/WpfStudyApp07/App.xaml.cs)
+        ```cs
+        private static readonly IHost _host = Host
+        .CreateDefaultBuilder()
+        .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(AppContext.BaseDirectory)); })
+        .ConfigureServices((context, services) =>
+        {
+            throw new NotImplementedException("No service or window was registered.");
+        }).Build();
+
+        private async void OnStartup(object sender, StartupEventArgs e)
+        {
+            await _host.StartAsync();
+            // MainWindow 인스턴스 생성
+            var mainWindow = Services.GetRequiredService<MainWindow>();
+            mainWindow.Show();
+        }
+        ```
+    
+    - App.xaml에 아래의 내용 추가
+    ```xml
+    <Application
+        ...
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
+        <Application.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ui:ThemesDictionary Theme="Dark" />
+                    <ui:ControlsDictionary />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Application.Resources>
+    </Application>
+    ```
+    ```cs
+    private async void OnStartup(object sender, StartupEventArgs e)
+    {
+        await _host.StartAsync();
+        // MainWindow 인스턴스 생성
+        var mainWindow = Services.GetRequiredService<MainWindow>();
+        mainWindow.Show();
+    }
+
+    ```
+    - MainWindow.xaml xmlns:ui 추가 App.xaml과 동일
+        ```xml
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" />
+        ```
+
+    - MainWindow.xaml Window -> ui:FluentWindow 변경
+    - Grid 내 타이틀바 추가
+        ```xml
+        <ui:FluentWindow Title="WPF UI App"/>
+        ```
+    - Theme 를 Dark로 했을 경우
+        - Window 전체 Background를 어두운색으로 지정 후 작업
+
+    - 실행결과
+
+        <img src="./image/cs0022.png>" width ="600"
 ## 10일차
 
 ### 코딩테스트

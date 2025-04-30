@@ -21,4 +21,11 @@ public partial class MainWindow : MetroWindow
     {
         InitializeComponent();
     }
+    // 슬라이더 값변경 이벤트 핸들러
+    private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+    {
+        PrgProcess1.Value = e.NewValue;
+        PrgProcess2.Value = 100 - e.NewValue;
+
+    }
 }

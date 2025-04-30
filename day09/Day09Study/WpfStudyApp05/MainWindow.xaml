@@ -9,6 +9,11 @@
     xmlns:local="clr-namespace:WpfStudyApp05"
     mc:Ignorable="d"
     Title="MahApps.Metro" Height="450" Width="800">
+    <mah:MetroWindow.IconTemplate>
+        <DataTemplate>
+            <iconPacks:PackIconMaterial Kind="ToggleSwitch" Margin="10,7,0,0"/>
+        </DataTemplate>
+    </mah:MetroWindow.IconTemplate>
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -33,15 +38,64 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Row="0" Grid.Column="0" Content="진행률" Margin="2"/>
-                <ProgressBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="2"
-                             Minimum="0" Maximum="100" Value="30"/>
-                <mah:MetroProgressBar Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="2" 
-                                      Minimum="0" Maximum="100" Value="40"/>
-                <mah:ProgressRing Grid.Row="3" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="2"/>
+                <Slider Grid.Row="1" Grid.Column="0" Margin="2" Grid.ColumnSpan="2"
+                        Minimum="0" Maximum="100" ValueChanged="Slider_ValueChanged"
+                        mah:SliderHelper.ChangeValueBy="LargeChange"
+                        mah:SliderHelper.EnableMouseWheel="MouseHover"
+                        mah:SliderHelper.TrackFillBrush="AntiqueWhite"
+                        mah:SliderHelper.TrackValueFillHoverBrush="DeepPink"/>
+                <ProgressBar x:Name="PrgProcess1"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="2"
+                             Minimum="0" Maximum="100" Value="0"
+                             IsIndeterminate="False"/>
+                <mah:MetroProgressBar x:Name="PrgProcess2" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="2" 
+                                      Minimum="0" Maximum="100" Value="100"
+                                      IsIndeterminate="False"/>
+                <mah:ProgressRing Grid.Row="4" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="2"/>
             </Grid>
         </GroupBox>
 
-        <GroupBox Grid.Row="0" Grid.Column="1" Margin="7.5,5,5,5"></GroupBox>
+        <GroupBox Grid.Row="0" Grid.Column="1" Margin="7.5,5,5,5" Header="Tab">
+            <TabControl SelectedIndex="1" 
+                        mah:TabControlHelper.Underlined="SelectedTabItem"
+                        mah:HeaderedControlHelper.HeaderFontSize="18"
+                        mah:HeaderedControlHelper.HeaderFontWeight="Bold">
+                <TabItem Header="Tab 1">
+                    <StackPanel>
+                        <TextBlock Text="야옹"/>
+                        <TextBox Text="테스트"
+                                 mah:TextBoxHelper.AutoWatermark="True"
+                                    mah:TextBoxHelper.ClearTextButton="True"/>
+                    </StackPanel>
+                </TabItem>
+                
+                <TabItem Header="Tab 2">
+                    <Canvas>
+                        <Ellipse Width="100" Height="100" Fill="Red"/>
+
+                        <Path Data="M176,56H80a72,72,0,0,0,0,144h96a72,72,0,0,0,0-144Zm0,112a40,40,0,1,1,40-40A40,40,0,0,1,176,168Z"
+                              Fill="ForestGreen"/>
+                    </Canvas>
+                </TabItem>
+                <TabItem Header="Tab 3">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <ProgressBar IsIndeterminate="True" Margin="10"/>
+                        <ProgressBar x:Name="PrgProcess"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10"
+                                    Minimum="0" Maximum="100" Value="0"
+                                    IsIndeterminate="True"/>
+                        <mah:MetroProgressBar x:Name="PrgProcesss2" Grid.Row="3" Grid.Column="0" Margin="2"  IsIndeterminate="True"/>
+
+
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </GroupBox>
 
     </Grid>
 </mah:MetroWindow>
