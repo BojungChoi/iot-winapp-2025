@@ -2,14 +2,8 @@
 IoT 개발자 C#/WinApp 리포지토리 2025
 
 ## ToyProject(C# WinForm 을 활용한 3DP Chip 컨셉 내 컴퓨터 하드웨어 불러오기)
-
-
-
 https://github.com/user-attachments/assets/0396baf2-62b4-4ae6-b011-ab2c0e873a43
-
-
-
-### 기능구현 목록 ![소스](./ToyProject/ToyProject/WinFormsApp1/FrmMain.cs) 
+### 기능구현 목록 [소스](./ToyProject/ToyProject/WinFormsApp1/FrmMain.cs) 
 1. 말풍선 이미지 상태 처리
     - enum + 배열을 활용하여 Normal, Loading, Completed, Error 상태에 따라 말풍선 이미지 자동 변경.
 2. 하드웨어 드라이버 링크 자동 검색
@@ -990,6 +984,21 @@ https://github.com/user-attachments/assets/0396baf2-62b4-4ae6-b011-ab2c0e873a43
 3. https://github.com/MahApps/IconPacks.Browser
    - IconPacks.Browser-net8-v2.0.0.zip 다운로드
 4. App.xaml에 필요한 리소스 코드 복붙
+    
+    ```xml
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <!-- Theme setting -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+    ```
+
 5. MainWindow.xaml.cs
     - Window -> MetroWindow 변경
 6. MainWindow.xaml
