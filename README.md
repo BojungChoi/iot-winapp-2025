@@ -1023,81 +1023,68 @@ https://github.com/user-attachments/assets/0396baf2-62b4-4ae6-b011-ab2c0e873a43
 ## 9일차
 
 ### MahApps.Metro 프레임워크
-- 컨트롤 사용법
+- 컨트롤 사용법 - [소스](./day09/Day09Study/WpfStudyApp05/MainWindow.xaml)
     - ProgressBar, MetroProgressBar, ProgressRing
     - TabControl
 
+### VS Tip
+- 프로젝트는 제거해도 폴더와 파일은 그대로 존재
+    - 윈도우 탐색기에서 폴더 삭제요망
+
 ### WPF UI 프레임워크
 - 개요
-    - Fluent UI란 이름의 
-- 기본사용법 - [소스](./day09/Day09Study/WpfStudyApp07/MainWindow.xaml)
+    - Fluent UI라 이름의 Modern UI의 한 스타일 UI 프레임워크
+    - 2021년 1.0 배포, 현재 버전 4.0.2
+
+- 기본 사용법 - [소스](./day09/Day09Study/WpfStudyApp07/MainWindow.xaml)
     - NuGet 패키지 관리자 > WPF-UI 검색 후 설치
-    - VS 에 Extension for WPF UI
-        - 상단 메뉴 확장 > 확장관리
-        - WPF-UI 검색 후 설치 
-        - VSIS Instaaler 시작 > Modify
+    - VS Extension for WPF UI
+        - 메뉴 확장 > 확장관리 
+        - WPF-UI 검색 후 설치
+        - VS 종료
+        - VSIS Installer 시작 > Modify
     - VS Project > WPF UI 프로젝트 선택
-    - "MainWindow.xaml 을 추가 생성
+    - MainWindow.xaml을 추가 생성
     - App.xaml.cs 오픈 - [소스](./day09/Day09Study/WpfStudyApp07/App.xaml.cs)
         ```cs
         private static readonly IHost _host = Host
-        .CreateDefaultBuilder()
-        .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(AppContext.BaseDirectory)); })
-        .ConfigureServices((context, services) =>
-        {
-            throw new NotImplementedException("No service or window was registered.");
-        }).Build();
+            .CreateDefaultBuilder()
+            .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(AppContext.BaseDirectory)); })
+            .ConfigureServices((context, services) =>
+            {
+                throw new NotImplementedException("No service or window was registered.");
+            }).Build();
 
         private async void OnStartup(object sender, StartupEventArgs e)
         {
             await _host.StartAsync();
             // MainWindow 인스턴스 생성
-            var mainWindow = Services.GetRequiredService<MainWindow>();
+            var mainWindow = _host.Services.GetRequiredService<MainWindow>();
             mainWindow.Show();
         }
         ```
-    
-    - App.xaml에 아래의 내용 추가
-    ```xml
-    <Application
-        ...
-        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
-        <Application.Resources>
-            <ResourceDictionary>
-                <ResourceDictionary.MergedDictionaries>
-                    <ui:ThemesDictionary Theme="Dark" />
-                    <ui:ControlsDictionary />
-                </ResourceDictionary.MergedDictionaries>
-            </ResourceDictionary>
-        </Application.Resources>
-    </Application>
-    ```
-    ```cs
-    private async void OnStartup(object sender, StartupEventArgs e)
-    {
-        await _host.StartAsync();
-        // MainWindow 인스턴스 생성
-        var mainWindow = Services.GetRequiredService<MainWindow>();
-        mainWindow.Show();
-    }
 
-    ```
-    - MainWindow.xaml xmlns:ui 추가 App.xaml과 동일
+    - MainWindow.xaml xmlns:ui 추가. App.xaml과 동일
         ```xml
-        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" />
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         ```
 
     - MainWindow.xaml Window -> ui:FluentWindow 변경
     - Grid 내 타이틀바 추가
         ```xml
-        <ui:FluentWindow Title="WPF UI App"/>
+        <ui:TitleBar Title="WPF UI App" />
         ```
-    - Theme 를 Dark로 했을 경우
+    - Theme를 Dark로 했을 경우
         - Window 전체 Background를 어두운색으로 지정 후 작업
 
     - 실행결과
+        - [Dark Theme]
+        <img src="./image/cs0022.png" width ="600">
+        
+        
+        - [Light Theme]
+        <img src="./image/cs0023.png" width ="600">
 
-        <img src="./image/cs0022.png>" width ="600"
 ## 10일차
 
 ### 코딩테스트
